@@ -133,6 +133,7 @@ def lstm_detect_univar(df, sensor, params, LSTM_params, model_type, name='',
     mlflow.tensorflow.autolog()
     params_2 = {"time_steps": LSTM_params.time_steps, "samples": LSTM_params.samples, "cells": LSTM_params.cells, "dropout": LSTM_params.dropout, "patience": LSTM_params.patience}
     mlflow.log_params(params_2)
+    mlflow.log_param("sensor", sensor)
     if model_type == ModelType.VANILLA:
         model = modeling_utilities.lstm_univar(df, LSTM_params, summary, name, model_output, model_save)
     elif model_type == ModelType.BIDIRECTIONAL:
