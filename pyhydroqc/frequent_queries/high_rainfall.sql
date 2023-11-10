@@ -1,0 +1,11 @@
+SELECT [record_version]
+      ,[valid_from]
+      ,[valid_to]
+      ,[sample_id]
+      ,[prev_91d_rainfall_mm]
+      ,[prev_182d_rainfall_mm]
+      ,[prev_365d_rainfall_mm]
+      ,[last_updated]
+      ,[updated_by]
+  FROM [gbrw_curated].[main_rainfall]
+  where [prev_365d_rainfall_mm] > 2000
